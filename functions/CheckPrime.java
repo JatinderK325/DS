@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CheckPrime {
 
-    public static String checkPrime(int num){
+    public static String checkPrime(int num){ // here n is copying into num. both n and num are different. after copying main.n = checkPrime.num.
         for(int divisor = 2; divisor < num; divisor++){
             int ans = num % divisor;
             if(ans == 0){
