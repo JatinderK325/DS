@@ -34,7 +34,8 @@ public class FibonacciNumber {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
-        checkMember(n);
+        boolean ans = checkMember(n);
+        System.out.println(ans);
     }
 
 }
