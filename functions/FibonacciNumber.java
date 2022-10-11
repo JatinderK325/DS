@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FibonacciNumber {
     public static boolean checkMember(int num) {
 
-        /*
+        /* for online compliers
          * Your class should be named Solution
          * Don't write main().
          * Don't read input, it is passed as function argument.
