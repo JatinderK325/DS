@@ -16,15 +16,6 @@ public class FindUnique {
     }
 
     public static int findUniqueNumber(int arr[]) {
-        // int uniqueNumber = 0;
-        // for (int i = 0; i < arr.length; i++) {
-        // for (int j = 0; j < arr.length; j++) {
-        // if (condition) {
-
-        // }
-        // }
-        // }
-        // return uniqueNumber;
         int uniqueNumber = 0;
         boolean visited[] = new boolean[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -44,6 +35,13 @@ public class FindUnique {
 
         return uniqueNumber;
     }
+    // using XOR: https://www.youtube.com/watch?v=C8o_CLCxohk
+    // int uniqueNumber = arr[0];
+    // for (int i = 1; i < arr.length; i++) {
+    //     uniqueNumber = uniqueNumber^arr[i];
+    // }
+    // return uniqueNumber;
+    // }
 
     public static void main(String[] args) {
         int arr[] = takeInput();
