@@ -1,6 +1,6 @@
 package Arrays;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class LinearSearch {
     public static int[] takeInput(int arr[], Scanner sc) {
