@@ -1,8 +1,8 @@
 package Arrays;
+// incomplete
+import java.util.Scanner;
 
-import java.util.*;
-
-public class FindDuplicate {
+public class PairSum {
     public static int[] takeInput() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of an array");
@@ -15,22 +15,19 @@ public class FindDuplicate {
         return array;
     }
 
-    // selection sort
-    public static int duplicate(int arr[]) {
-        for (int i = 0; i < arr.length - 1; i++) { // rounds
-            int duplicate = arr[i];
-            for (int j = i + 1; j < arr.length; j++) {// checking elements in an array
-                if (duplicate == arr[j]) {
-                    return duplicate;
-                }
-            }
+    public static int pairSum(int arr[]) {
+        int sum = 0;
+        int n = 10;
+        for (int i = 0; i < arr.length - 1; i++) {
+            // 2 8 10 5 -2 5
+            
         }
         return 0;
     }
 
     public static void main(String[] args) {
         int arr[] = takeInput();
-        int duplicate = duplicate(arr);
-        System.out.println(duplicate);
+        int totalPairsEqualToSum = pairSum(arr);
+        System.out.println(totalPairsEqualToSum);
     }
 }

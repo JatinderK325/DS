@@ -2,7 +2,8 @@ package Arrays;
 // sorting in ascending order:
 public class SelectionSort {
     public static void sort(int array[]) {
-        for (int i = 0; i < array.length - 1; i++) {
+        // selection sort
+        for (int i = 0; i < array.length - 1; i++) {// rounds
             int min = array[i];
             int indexOfMin = i;
             for (int j = i + 1; j < array.length; j++) { // j = i + 1 becoz we are sorting rest of the array with not included index = 0.
