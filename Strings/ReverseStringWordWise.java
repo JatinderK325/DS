@@ -1,15 +1,21 @@
 package Strings;
-// incomplete
+
 public class ReverseStringWordWise {
-    public static String reverseString(String s){
-        //String words[] = s.split("\\s+");
-        // return words.length;
-        String revStr = "";
-        for (int i = s.length() - 1; i >= 0; i--) {
-            revStr = revStr + i;
+    public static String reverseString(String s) {
+        int end = s.length();
+        int i = s.length() - 1;
+        String ans = "";
+        while (i >= 0) {
+            if (s.charAt(i) == ' ') {
+                ans = ans + s.substring(i + 1, end) + " ";
+                end = i;
+            }
+            i--;
         }
-        return revStr;
+        ans += s.substring(i + 1, end);
+        return ans;
     }
+
     public static void main(String[] args) {
         String str = "This is a sample string";
         String revStr = reverseString(str);
