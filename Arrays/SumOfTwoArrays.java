@@ -1,5 +1,5 @@
 package Arrays;
-// incomplete
+
 public class SumOfTwoArrays {
     public static int[] add(int arr1[], int arr2[]){
         int na = arr1.length;
