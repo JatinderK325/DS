@@ -2,8 +2,8 @@ package Strings;
 
 public class ReverseStringWordWise {
     public static String reverseString(String s) {
-        int end = s.length();
-        int i = s.length() - 1;
+        int end = s.length(); // 23
+        int i = s.length() - 1; // 22
         String ans = "";
         while (i >= 0) {
             if (s.charAt(i) == ' ') {
