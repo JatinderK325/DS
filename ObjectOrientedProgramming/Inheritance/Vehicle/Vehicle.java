@@ -4,6 +4,10 @@ public class Vehicle {
     // protected means within the package but also accessible in the other package if we have sub class in that package.
     protected String color;
     private int maxSpeed;
+
+    public Vehicle(int maxSpeed){
+        this.maxSpeed = maxSpeed;
+    }
     
     public void setMaxSpeed(int maxSpeed){
         this.maxSpeed = maxSpeed;
