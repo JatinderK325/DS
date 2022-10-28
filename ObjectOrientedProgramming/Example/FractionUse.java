@@ -1,7 +1,7 @@
 package ObjectOrientedProgramming.Example;
 
 public class FractionUse {
-    public static void main(String[] args) {
+    public static void temp() {
         Fraction f1 = new Fraction(20, 30);
         f1.print();
         // 2/3
@@ -13,8 +13,16 @@ public class FractionUse {
         f1.print();
 
         f1.setNumerator(10);
-        f1.setDenominator(30);
-        // 1/3
+        // Exception handling
+        try{
+            f1.setDenominator(10);
+        }catch(ZeroDenominatorException e){
+            System.out.println("Hey don't input 0 as denominator!");
+        }
+        finally{
+            System.out.println("This block will execute always.");
+        }
+
         f1.print();
 
         Fraction f2 = new Fraction(3, 4);
@@ -35,6 +43,9 @@ public class FractionUse {
         f1.print();
         f3.print();
         f4.print();
+    }
 
+    public static void main(String[] args) throws ZeroDenominatorException{
+        temp();
     }
 }

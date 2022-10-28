@@ -8,7 +8,7 @@ public class VehicleUse {
         v.setMaxSpeed(10);
         v.print(); // will print parent class(Vehicle) 'print' method.
         
-        Vehicle v1 = new Car(10, 20);
+        Vehicle v1 = new Car(10, 20); // eg of Polymorphism. Creating Vehicle pointing to Car because every Car is a Vehicle.
         
         // child class 'car' object
         Car c = new Car(10, 100);

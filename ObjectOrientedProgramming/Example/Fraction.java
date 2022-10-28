@@ -7,7 +7,6 @@ public class Fraction {
     public Fraction(int numerator, int denominator){
         this.numerator = numerator;
         if (denominator == 0) {
-            
         }
         this.denominator = denominator;
         simplify();
@@ -23,9 +22,10 @@ public class Fraction {
         this.numerator = n;
         simplify();
     }
-    public void setDenominator(int d){
+    public void setDenominator(int d) throws ZeroDenominatorException{
         if(d == 0){
-            return;
+            ZeroDenominatorException e = new ZeroDenominatorException();
+            throw e;
         }
         this.denominator = d;
         this.simplify();
