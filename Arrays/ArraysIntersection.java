@@ -15,8 +15,8 @@ public class ArraysIntersection {
         }
     }
     public static void main(String[] args) {
-        int arr1[] = {2, 2};
-        int arr2[] = {2 };
+        int arr1[] = {2, 5, 7, 2};
+        int arr2[] = {2, 3, 5 };
         intersection(arr1, arr2);
     }
 }
