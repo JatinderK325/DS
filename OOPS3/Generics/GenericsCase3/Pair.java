@@ -1,12 +1,11 @@
-package OOPS3.Generics;
+package OOPS3.Generics.GenericsCase3;
 
-public class Pair<T> { // is called generic class
-    // we can define any kind of data types while making objects.
+public class Pair<T, V> { 
 
     public T first;
-    public T second;
+    public V second;
 
-    public Pair(T first, T second){
+    public Pair(T first, V second){
         this.first = first;
         this.second = second;
     }
@@ -19,11 +18,11 @@ public class Pair<T> { // is called generic class
         return first;
     }
     
-    public void setSecond(T second){
+    public void setSecond(V second){
         this.second = second;
     }
     
-    public T getSecond(){
+    public V getSecond(){
         return second;
     }
     

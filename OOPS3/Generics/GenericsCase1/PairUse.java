@@ -1,4 +1,4 @@
-package OOPS3.Generics;
+package OOPS3.Generics.GenericsCase1;
 
 public class PairUse {
     public static void main(String[] args) {
@@ -14,6 +14,7 @@ public class PairUse {
         // we can't use primitive data types in generic.
         Pair<Integer> p1 = new Pair<Integer>(1, 2);
         Pair<Character> p2 = new Pair<>('d', 'f');
+        // Pair<Character> p2 = new Pair<Character>('d', 'f');
 
         // for every primitive, there is a class
         // int => Integer
