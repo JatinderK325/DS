@@ -37,7 +37,7 @@ public class PrintLinkedList {
     // o/p: 10 20 30 50
     public static Node<Integer> delete(Node<Integer> head, int pos){
         // Reaching pos through iterations where we need to delete element.
-        if(pos == 0){
+        if(pos == 0){ 
             head = head.next;
             return head;
         }

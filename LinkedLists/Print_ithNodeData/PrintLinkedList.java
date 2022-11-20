@@ -1,4 +1,4 @@
-package LinkedLists.TakingLinkedListInput;
+package LinkedLists.Print_ithNodeData;
 
 import java.util.Scanner;
 
@@ -16,17 +16,7 @@ public class PrintLinkedList {
                 head = newNode;
                 tail = newNode;
             }
-            else{ // if sec, 3rd....
-                /* 
-                // making links between nodes
-                Node<Integer> temp = head;
-                // this is for reaching that node with which we will insert our new node i.e for example at element 2's next, we are inserting reference for 3 element .
-                while(temp.next != null){
-                    temp = temp.next; // moving temp
-                }
-                temp.next  = newNode; // if temp.next == null
-                */
-                // OR
+            else{ 
                 tail.next = newNode; // means we will put new element's reference at the tail's next part(last node's next).
                 tail = newNode; // or tail = tail.next; // updating tail becoz new element has inserted and that will be our new tail.
             }
@@ -36,15 +26,21 @@ public class PrintLinkedList {
         return head;
     }
 
-    public static void print(Node <Integer> head){
-        // Printing linked list
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next; // setting head to the next node's address that is stored in node1' s next part initially.
+    // printing the element on ith node
+    public static void printithNodeData(Node <Integer> head, int pos){
+        int i = 0;
+        Node<Integer> temp = head;
+        while(i <= pos){
+            if(i == pos){
+                System.out.print(temp.data + " ");
+            }
+            temp = temp.next;
+            i++;
         }
     }
+
     public static void main(String[] args) {
         Node<Integer> head = takeInput();
-        print(head);
+        printithNodeData(head, 3);
     }
 }

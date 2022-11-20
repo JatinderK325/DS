@@ -1,4 +1,4 @@
-package LinkedLists.TakingLinkedListInput;
+package LinkedLists.FindNode;
 
 import java.util.Scanner;
 
@@ -12,39 +12,35 @@ public class PrintLinkedList {
         while(data != -1){ // taking elements from user until user gives -1
             // creating node for user's entered elements
             Node<Integer> newNode = new Node<>(data);
-            if(head == null){ // for first node
+            if(head == null){
                 head = newNode;
                 tail = newNode;
             }
-            else{ // if sec, 3rd....
-                /* 
-                // making links between nodes
-                Node<Integer> temp = head;
-                // this is for reaching that node with which we will insert our new node i.e for example at element 2's next, we are inserting reference for 3 element .
-                while(temp.next != null){
-                    temp = temp.next; // moving temp
-                }
-                temp.next  = newNode; // if temp.next == null
-                */
-                // OR
+            else{
                 tail.next = newNode; // means we will put new element's reference at the tail's next part(last node's next).
                 tail = newNode; // or tail = tail.next; // updating tail becoz new element has inserted and that will be our new tail.
             }
-
             data = s.nextInt(); // setting data step by step that is entered by user.
         }
         return head;
     }
 
-    public static void print(Node <Integer> head){
-        // Printing linked list
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next; // setting head to the next node's address that is stored in node1' s next part initially.
+    // returning the index of an element that we are finding in the list.
+    public static int findNode(Node<Integer> head, int eleToFind){
+        int index = 0;
+        Node<Integer> temp = head;
+        while (temp != null) {
+            if(eleToFind == temp.data){
+                return index;
+            }
+            temp = temp.next;
+            index++;
         }
+        return -1;
     }
     public static void main(String[] args) {
         Node<Integer> head = takeInput();
-        print(head);
+        int index = findNode(head, 6);
+        System.out.println(index);
     }
 }
