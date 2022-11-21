@@ -29,7 +29,7 @@ public class PrintLinkedList {
     public static int findNode(Node<Integer> head, int eleToFind){
         int index = 0;
         Node<Integer> temp = head;
-        while (temp != null) {
+        while (temp.next != null) {
             if(eleToFind == temp.data){
                 return index;
             }
