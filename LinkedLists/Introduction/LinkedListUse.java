@@ -13,3 +13,5 @@ public class LinkedListUse {
         System.out.println(node1.next); // Node@6b95977 - address of node2.
     }
 }
+
+// 425
