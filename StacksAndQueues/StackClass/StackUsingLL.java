@@ -1,4 +1,4 @@
-package StacksAndQueues.StackUsingLL;
+package StacksAndQueues.StackClass;
 
 public class StackUsingLL<T> {
     // we are usinglinked list to store data in our stack.
