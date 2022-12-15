@@ -1,4 +1,5 @@
 package StacksAndQueues.IntroductionToQueue;
+ // Queue works on FIFO
 
 public class QueueUsingArray {
     private int data[];
@@ -46,6 +47,7 @@ public class QueueUsingArray {
         return data[front];
     }
 
+    // insertion: Elements get inserted at the rear part of a queue.
     public void enqueue(int element) throws QueueFullException{
         if( size == data.length){
             // throw new QueueFullException();
@@ -80,6 +82,7 @@ public class QueueUsingArray {
         rear = temp.length - 1;
     }
 
+    // deletion: Elements get deleted at the front part of a queue.
     public int dequeue() throws QueueEmptyException{
         if(size == 0){
             throw new QueueEmptyException();

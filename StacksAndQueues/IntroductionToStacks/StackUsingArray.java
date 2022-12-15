@@ -1,5 +1,5 @@
 package StacksAndQueues.IntroductionToStacks;
-
+ // Stack works on LIFO
 public class StackUsingArray {
     // we can use either array or linked list to store data in our stack.
     private int data[];
@@ -41,6 +41,7 @@ public class StackUsingArray {
         return data[top];
     }
 
+    // both insertion and deletion happens at the top end
     // adding elements in stack
     public void push(int element) throws StackFullException{
         if(size() == data.length){
