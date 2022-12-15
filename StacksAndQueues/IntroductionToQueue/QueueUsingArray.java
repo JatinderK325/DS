@@ -48,17 +48,36 @@ public class QueueUsingArray {
 
     public void enqueue(int element) throws QueueFullException{
         if( size == data.length){
-            throw new QueueFullException();
+            // throw new QueueFullException();
+            doubleCapacity();
         }
         if(size == 0){ // when we are inserting first element in a queue, we need to update front from -1 to 0.
             front = 0;
         }
         rear++;
+        // impementing circular queue
         if(rear == data.length){ // if rear reaches last, then send rear to 0 again becoz if there is a space in queue, we can enter new elements in a queue.
             rear = 0;
         }
         size++;
         data[rear] = element;
+    }
+
+    private void doubleCapacity() {
+        int temp[] = data;
+        // increasing size of queue(dynamic queue)
+        data = new int[2 * temp.length];
+        int index = 0;
+        for (int i = front; i < temp.length; i++) {
+            data[index] = temp[i];
+            index++;
+        }
+        for (int i = 0; i <= front - 1; i++) {
+            data[index] = temp[i];
+            index++;
+        }
+        front = 0;
+        rear = temp.length - 1;
     }
 
     public int dequeue() throws QueueEmptyException{

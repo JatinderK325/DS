@@ -14,7 +14,7 @@ public class StackUsingLL<T> {
     public boolean isEmpty(){
         // if(size == 0){
         //     return true;
-        // }else{
+        // } else{
         //     return false;
         // } 
         // OR
