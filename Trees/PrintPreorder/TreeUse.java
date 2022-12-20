@@ -1,4 +1,4 @@
-package Trees.FindHeightOfTree;
+package Trees.PrintPreorder;
 
 import java.util.Scanner;
 
@@ -7,30 +7,15 @@ import StacksAndQueues.QueueUsingLL.QueueUsingLL;
 
 public class TreeUse {
 
-    public static int findHeight(TreeNode<Integer> root){
-        // total number of levels = height of the tree
-        /* eg
-                           1
-                        2      3  so total level = 3 = height of a tree
-                      4   1
-        */        
-        if(root == null){ // this is not a base case, it is part of code if our root is initially null then we will return 0. this is called edge case.
-            return 0;
+    public static void preorder(TreeNode<Integer> root){ 
+        if(root == null){ // this is edge case. we don't need base case becoz for loop is handling our recursion.
+        // preorder definition -> refer notes
+            return;
         }
-        if(root.children.size() == 0){
-            return 1;
+        System.out.print(root.data + " ");
+        for (int i = 0; i < root.children.size(); i++) { 
+            preorder(root.children.get(i));
         }
-        
-        int maxHeight = 0;
-        // getting max height among all children of root TreeNode.
-        for (int i = 0; i < root.children.size(); i++) { // here recursion is handling with for loop not a base case.
-            int maxHeightChild = findHeight(root.children.get(i));
-            // comparing root TreeNode with its children one by one and updating height.
-            if (maxHeightChild > maxHeight) {
-                maxHeight = maxHeightChild;
-            }
-        }
-        return maxHeight + 1;
     }
 
     // Now we will take input and print our tree level wise instead of recursively.
@@ -96,7 +81,6 @@ public class TreeUse {
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInputLevelWise();
         printLevelWise(root);
-        int n = findHeight(root);
-        System.out.println(n);
+        preorder(root);
     }
 }

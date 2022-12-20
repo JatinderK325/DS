@@ -1,4 +1,4 @@
-package Trees.FindHeightOfTree;
+package Trees.FindDepthOfANode;
 
 import java.util.Scanner;
 
@@ -7,30 +7,25 @@ import StacksAndQueues.QueueUsingLL.QueueUsingLL;
 
 public class TreeUse {
 
-    public static int findHeight(TreeNode<Integer> root){
-        // total number of levels = height of the tree
+    public static void printAtK(TreeNode<Integer> root, int k){
+        // total distance from root to a particular TreeNode = depth of the that particular TreeNode
         /* eg
                            1
-                        2      3  so total level = 3 = height of a tree
+                        2      3  so depth of 4 (TreeNode) = 2
                       4   1
-        */        
-        if(root == null){ // this is not a base case, it is part of code if our root is initially null then we will return 0. this is called edge case.
-            return 0;
+        */     
+        // here we are printing all the tree nodes that are at depth 'k' = 2. Output should be 4 and 1  
+        if(k < 0){ // base case
+            return;
         }
-        if(root.children.size() == 0){
-            return 1;
+        if(k == 0){
+            System.out.println(root.data);
+            return;
         }
         
-        int maxHeight = 0;
-        // getting max height among all children of root TreeNode.
-        for (int i = 0; i < root.children.size(); i++) { // here recursion is handling with for loop not a base case.
-            int maxHeightChild = findHeight(root.children.get(i));
-            // comparing root TreeNode with its children one by one and updating height.
-            if (maxHeightChild > maxHeight) {
-                maxHeight = maxHeightChild;
-            }
+        for (int i = 0; i < root.children.size(); i++) { 
+            printAtK(root.children.get(i), k-1);
         }
-        return maxHeight + 1;
     }
 
     // Now we will take input and print our tree level wise instead of recursively.
@@ -96,7 +91,6 @@ public class TreeUse {
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInputLevelWise();
         printLevelWise(root);
-        int n = findHeight(root);
-        System.out.println(n);
+        printAtK(root, 2);
     }
 }
