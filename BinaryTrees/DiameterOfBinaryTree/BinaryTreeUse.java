@@ -1,10 +1,27 @@
-package BinaryTrees.BinaryTreeTakeInputLevelWise;
-
+package BinaryTrees.DiameterOfBinaryTree;
 import java.util.Scanner;
-
 import BinaryTrees.BinaryTreeTakeInputLevelWise.QueueUsingLL.QueueUsingLL;
-// now we will take input level wise from left to right not recursively.
+// find diameter of a binary tree.
 public class BinaryTreeUse {
+    public static int diameter(BinaryTree<Integer> root){
+        if (root == null) {
+            return 0;
+        }
+        int option1 = height(root.left) + height(root.right); // calling height function
+        int option2 = diameter(root.left); // get diameter of left side
+        int option3 = diameter(root.right); // get diameter of right side nodes
+        return Math.max(option1, Math.max(option2, option3));
+    }
+
+    public static int height(BinaryTree<Integer> root) {
+        if(root == null){
+            return 0;
+        }
+        int lh = height(root.left);
+        int rh = height(root.right);
+        return 1 + Math.max(lh, rh);
+    }
+
     public static void printTree(BinaryTree<Integer> root){
         /*
                                    1
@@ -79,5 +96,7 @@ public class BinaryTreeUse {
     public static void main(String[] args) {
         BinaryTree<Integer> root = takeInputLevelWise();
         printTree(root);
+        int ans = diameter(root);
+        System.out.println("The diameter of binary tree is: " + ans);
     }
 }

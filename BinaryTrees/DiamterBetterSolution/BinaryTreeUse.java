@@ -1,10 +1,36 @@
-package BinaryTrees.BinaryTreeTakeInputLevelWise;
-
+package BinaryTrees.DiamterBetterSolution;
 import java.util.Scanner;
-
 import BinaryTrees.BinaryTreeTakeInputLevelWise.QueueUsingLL.QueueUsingLL;
-// now we will take input level wise from left to right not recursively.
+
 public class BinaryTreeUse {
+
+    // getting height and diameter both together using Pair<> in order to improve efficieny and time complexity of the code.
+    public static Pair<Integer, Integer> heightDiameter(BinaryTree<Integer> root){
+        if (root == null) {
+            Pair<Integer,Integer> output = new Pair<>();
+            output.first = 0;
+            output.second = 0;
+            return output;
+        }
+        // getting height and diameter both together using Pair<> from left hand side.
+        Pair<Integer, Integer> leftOuput = heightDiameter(root.left);
+         // getting height and diameter both together using Pair<> from right hand side.
+        Pair<Integer, Integer> rightOutput = heightDiameter(root.right);
+        // total height 
+        int height = 1 + Math.max(leftOuput.first, rightOutput.first);
+        // for getting diameter = left side height + right side height
+        int option1 = leftOuput.first + rightOutput.first;
+        // for getting diameter = left side diameter
+        int option2 = leftOuput.second;
+        // for getting diameter = right side diameter
+        int option3 = rightOutput.second;
+        int diameter = Math.max(option1, Math.max(option2, option3));
+        Pair<Integer,Integer> output = new Pair<>();
+        output.first = height;
+        output.second = diameter;
+        return output;
+    }
+
     public static void printTree(BinaryTree<Integer> root){
         /*
                                    1
@@ -79,5 +105,8 @@ public class BinaryTreeUse {
     public static void main(String[] args) {
         BinaryTree<Integer> root = takeInputLevelWise();
         printTree(root);
+        System.out.println("Diameter: " + heightDiameter(root).second);
+        System.out.println("Height: " + heightDiameter(root).first);
+
     }
 }

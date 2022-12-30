@@ -1,10 +1,17 @@
-package BinaryTrees.BinaryTreeTakeInputLevelWise;
-
+package BinaryTrees.CountNodesInBinaryTree;
 import java.util.Scanner;
-
 import BinaryTrees.BinaryTreeTakeInputLevelWise.QueueUsingLL.QueueUsingLL;
-// now we will take input level wise from left to right not recursively.
+// find number of nodes recursively.
 public class BinaryTreeUse {
+    public static int countNodes(BinaryTree<Integer> root){
+        if (root == null) {
+            return 0;
+        }
+        int ans = 1; // corresponding to root
+        ans += countNodes(root.left); // count nodes from left side
+        ans += countNodes(root.right); // count right side nodes
+        return ans;
+    }
     public static void printTree(BinaryTree<Integer> root){
         /*
                                    1
@@ -79,5 +86,7 @@ public class BinaryTreeUse {
     public static void main(String[] args) {
         BinaryTree<Integer> root = takeInputLevelWise();
         printTree(root);
+        int ans = countNodes(root);
+        System.out.println("The number of nodes in binary tree is: " + ans);
     }
 }
