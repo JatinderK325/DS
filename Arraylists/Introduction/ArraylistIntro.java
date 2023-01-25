@@ -1,7 +1,7 @@
 package Arraylists.Introduction;
 
 import java.util.ArrayList;
-
+// program
 public class ArraylistIntro {
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<Integer>(); // by default it creates capacity for 10 elements, then it expands acc to user's requirements

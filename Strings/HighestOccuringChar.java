@@ -6,7 +6,7 @@ public class HighestOccuringChar {
 
         for (int i = 0; i < inputString.length(); i++) {
             int ch = inputString.charAt(i);
-            freq[ch] = freq[ch] + 1;
+            freq[ch] = freq[ch] + 1; // freq[ch]++;
         }
 
         int largest = 0;
